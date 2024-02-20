@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: challengen5api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: challengen5api
+  template:
+    metadata:
+      labels:
+        app: challengen5api
+    spec:
+      containers:
+      - name: challengen5api-container
+        image: challengen5api-image
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
